@@ -1,0 +1,1 @@
+solution is at projects/CaseTracker/Stalker.sln
