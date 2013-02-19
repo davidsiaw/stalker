@@ -7,11 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stalker", "..\Stalker\Stalk
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kiln.Net", "..\..\..\kiln-net\src\Kiln.Net\Kiln.Net.csproj", "{3CCF84CB-B737-4B4C-A8CB-35A192B9EED3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlueBlocksLib", "..\..\..\blueblocks\BlueBlocksLib\BlueBlocksLib.csproj", "{3E610D1E-838A-4EAB-80AE-CA4E78C2D83A}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HgNet", "..\..\..\..\Experiments\HgControl\HgNet\HgNet.csproj", "{C9A71970-81AE-4552-858D-35DCEFB2CE58}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataTable", "DataTable\DataTable.csproj", "{AFD7BC92-D2BE-4854-8E20-5852FFCDAC0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlueBlocksLib", "..\..\blueblocks\BlueBlocksLib\BlueBlocksLib.csproj", "{3E610D1E-838A-4EAB-80AE-CA4E78C2D83A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,10 +31,6 @@ Global
 		{3CCF84CB-B737-4B4C-A8CB-35A192B9EED3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3CCF84CB-B737-4B4C-A8CB-35A192B9EED3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3CCF84CB-B737-4B4C-A8CB-35A192B9EED3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3E610D1E-838A-4EAB-80AE-CA4E78C2D83A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3E610D1E-838A-4EAB-80AE-CA4E78C2D83A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3E610D1E-838A-4EAB-80AE-CA4E78C2D83A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3E610D1E-838A-4EAB-80AE-CA4E78C2D83A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C9A71970-81AE-4552-858D-35DCEFB2CE58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C9A71970-81AE-4552-858D-35DCEFB2CE58}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9A71970-81AE-4552-858D-35DCEFB2CE58}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -43,6 +39,10 @@ Global
 		{AFD7BC92-D2BE-4854-8E20-5852FFCDAC0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AFD7BC92-D2BE-4854-8E20-5852FFCDAC0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AFD7BC92-D2BE-4854-8E20-5852FFCDAC0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E610D1E-838A-4EAB-80AE-CA4E78C2D83A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E610D1E-838A-4EAB-80AE-CA4E78C2D83A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E610D1E-838A-4EAB-80AE-CA4E78C2D83A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E610D1E-838A-4EAB-80AE-CA4E78C2D83A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

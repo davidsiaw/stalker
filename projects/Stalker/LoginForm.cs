@@ -18,11 +18,11 @@ namespace FogBugzCaseTracker
             set { txtUserName.Text = value; } 
         }
 
-        public string Password {
-            get { return txtPassword.Text; }
-            set { txtPassword.Text = value; } 
-        }
-
+		public string Password {
+			get { return txtPassword.Text; }
+			set { txtPassword.Text = value; }
+		}
+        
         public string Server
         {
             get { return txtServer.Text; }
