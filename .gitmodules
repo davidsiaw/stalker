@@ -1,0 +1,3 @@
+[submodule "blueblocks"]
+	path = blueblocks
+	url = git://github.com/davidsiaw/blueblocks.git
