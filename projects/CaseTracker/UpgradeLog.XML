@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="CaseTracker">
+</Property><Property Name="Solution File" Value="C:\Tools\CaseTracker\projects\CaseTracker\CaseTracker.sln">
+</Property><Property Name="User Options File" Value="C:\Tools\CaseTracker\projects\CaseTracker\CaseTracker.suo">
+</Property><Property Name="Date" Value="Tuesday, 6 September 2011">
+</Property><Property Name="Time" Value="14:38 p.m.">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="CaseTracker.sln" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\CaseTracker.sln">
+</Event><Event ErrorLevel="0" Project="" Source="CaseTracker.suo" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\CaseTracker.suo">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="CaseTracker.csproj" Description="Project file successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\CaseTracker.csproj">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="AboutDlg.cs" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\AboutDlg.cs">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="AboutDlg.Designer.cs" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\AboutDlg.Designer.cs">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="AppSettings.cs" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\AppSettings.cs">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="AutoUpdater.cs" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\AutoUpdater.cs">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="Crypto.cs" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\Crypto.cs">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="CultureAwareBackgroundWorker.cs" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\CultureAwareBackgroundWorker.cs">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="EstimateDialog.cs" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\EstimateDialog.cs">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="EstimateDialog.Designer.cs" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\EstimateDialog.Designer.cs">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="Models\FilterModel.cs" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\Models\FilterModel.cs">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="HoverWindow\CaseList.cs" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\HoverWindow\CaseList.cs">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="HoverWindow\Excel.cs" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\HoverWindow\Excel.cs">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="HoverWindow\Filtering.cs" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\HoverWindow\Filtering.cs">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="HoverWindow\FreeMind.cs" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\HoverWindow\FreeMind.cs">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="HoverWindow\HoverWindowController.cs" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\HoverWindow\HoverWindowController.cs">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="HoverWindow\HoverWindowState.cs" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\HoverWindow\HoverWindowState.cs">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="HoverWindow\Interop.cs" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\HoverWindow\Interop.cs">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="HoverWindow\SearchHistory.cs" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\HoverWindow\SearchHistory.cs">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="ImportConfirmationDlg.cs" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\ImportConfirmationDlg.cs">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="ImportConfirmationDlg.Designer.cs" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\ImportConfirmationDlg.Designer.cs">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="HoverWindow\Login.cs" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\HoverWindow\Login.cs">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="LoginForm.cs" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\LoginForm.cs">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="LoginForm.Designer.cs" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\LoginForm.Designer.cs">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="MultiImageButton.cs" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\MultiImageButton.cs">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="MultiImageButton.Designer.cs" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\MultiImageButton.Designer.cs">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="MultiImageToolStripMenuItem.cs" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\MultiImageToolStripMenuItem.cs">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="MultiImageToolStripMenuItem.Designer.cs" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\MultiImageToolStripMenuItem.Designer.cs">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="Program.cs" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\Program.cs">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="Properties\AssemblyInfo.cs" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="Properties\Resources.Designer.cs" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\Properties\Resources.Designer.cs">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="FilterDialog.cs" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\FilterDialog.cs">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="FilterDialog.Designer.cs" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\FilterDialog.Designer.cs">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="HoverWindow\HoverWindow.cs" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\HoverWindow\HoverWindow.cs">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="HoverWindow\HoverWindow.Designer.cs" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\HoverWindow\HoverWindow.Designer.cs">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="HoverWindow\Tracking.cs" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\HoverWindow\Tracking.cs">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="SettingsDlg.cs" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\SettingsDlg.cs">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="SettingsDlg.Designer.cs" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\SettingsDlg.Designer.cs">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="SettingsModel.cs" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\SettingsModel.cs">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="VersionString.cs" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\VersionString.cs">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="VersionUpdatePrompt.cs" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\VersionUpdatePrompt.cs">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="VersionUpdatePrompt.Designer.cs" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\VersionUpdatePrompt.Designer.cs">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="Resources\icon.ico" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\Resources\icon.ico">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="Config\app.config" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\Config\app.config">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="Resources\icon.bmp" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\Resources\icon.bmp">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="Resources\refresh.gif" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\Resources\refresh.gif">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="Resources\check_icon.gif" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\Resources\check_icon.gif">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="Resources\key.gif" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\Resources\key.gif">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="Resources\firefox_16.png" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\Resources\firefox_16.png">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="Resources\filter.png" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\Resources\filter.png">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="Resources\ellipsis_vertical.gif" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\Resources\ellipsis_vertical.gif">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="Resources\fat_check.png" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\Resources\fat_check.png">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="Resources\new_case.png" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\Resources\new_case.png">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="Resources\excel.png" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\Resources\excel.png">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="Resources\freemind.png" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\Resources\freemind.png">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="Resources\busy.gif" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\Resources\busy.gif">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="Resources\new.png" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\Resources\new.png">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="Resources\pause.png" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\Resources\pause.png">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="Resources\refresh_disabled.gif" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\Resources\refresh_disabled.gif">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="Resources\filter_disabled.png" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\Resources\filter_disabled.png">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="Resources\new_case_disabled.png" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\Resources\new_case_disabled.png">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="Resources\check_icon_disabled.gif" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\Resources\check_icon_disabled.gif">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="Resources\fat_check_disabled.png" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\Resources\fat_check_disabled.png">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="Resources\firefox_16_disabled.png" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\Resources\firefox_16_disabled.png">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="Resources\key_disabled.gif" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\Resources\key_disabled.gif">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="Resources\excel_disabled.png" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\Resources\excel_disabled.png">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="Resources\freemind_disabled.png" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\Resources\freemind_disabled.png">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="Resources\pause_disabled.png" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\Resources\pause_disabled.png">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="Resources\outline_disabled.png" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\Resources\outline_disabled.png">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="Resources\outline.png" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\Resources\outline.png">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="Resources\clock_disabled.png" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\Resources\clock_disabled.png">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="Resources\clock.png" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\Resources\clock.png">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="Resources\check_disabled.png" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\Resources\check_disabled.png">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="Resources\check.png" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\Resources\check.png">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="Resources\settings.png" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\Resources\settings.png">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="Resources\stop.png" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\Resources\stop.png">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="Resources\stop_disabled.png" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\Resources\stop_disabled.png">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="AboutDlg.resx" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\AboutDlg.resx">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="EstimateDialog.resx" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\EstimateDialog.resx">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="ImportConfirmationDlg.resx" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\ImportConfirmationDlg.resx">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="LoginForm.resx" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\LoginForm.resx">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="Properties\Resources.resx" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\Properties\Resources.resx">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="FilterDialog.resx" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\FilterDialog.resx">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="HoverWindow\HoverWindow.resx" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\HoverWindow\HoverWindow.resx">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="SettingsDlg.resx" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\SettingsDlg.resx">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="VersionUpdatePrompt.resx" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\VersionUpdatePrompt.resx">
+</Event><Event ErrorLevel="1" Project="CaseTracker" Source="CaseTracker.csproj" Description="Your project is targeting .NET Framework 2.0 or 3.0. If your project uses assemblies requiring a newer .NET Framework, your project will fail to build. You can change the .NET Framework version by clicking Properties on the project menu and then selecting a new version in the '.NET Framework' dropdown box. (In Visual Basic, this is located on the Compile tab by clicking the 'Advanced Compiler Options...' button.)">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="CaseTracker.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="CaseTracker" Source="CaseTracker.csproj" Description="Converted">
+</Event><Event ErrorLevel="1" Project="FogBugzNet" Source="..\FogBugzNet\FogBugzNet.csproj" Description="Warning: The project file is being backed up to a relative path that differs from the original solution relative path.  The difference in folder hierarchy may create problems in opening or building the backed up solution and project.">
+</Event><Event ErrorLevel="0" Project="FogBugzNet" Source="..\FogBugzNet\FogBugzNet.csproj" Description="Project file successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\FogBugzNet\FogBugzNet.csproj">
+</Event><Event ErrorLevel="0" Project="FogBugzNet" Source="..\FogBugzNet\Case.cs" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\FogBugzNet\Case.cs">
+</Event><Event ErrorLevel="0" Project="FogBugzNet" Source="..\FogBugzNet\Credentials.cs" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\FogBugzNet\Credentials.cs">
+</Event><Event ErrorLevel="0" Project="FogBugzNet" Source="..\FogBugzNet\Exporter.cs" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\FogBugzNet\Exporter.cs">
+</Event><Event ErrorLevel="0" Project="FogBugzNet" Source="..\FogBugzNet\FogBugz.cs" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\FogBugzNet\FogBugz.cs">
+</Event><Event ErrorLevel="0" Project="FogBugzNet" Source="..\FogBugzNet\FogBugzTest.cs" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\FogBugzNet\FogBugzTest.cs">
+</Event><Event ErrorLevel="0" Project="FogBugzNet" Source="..\FogBugzNet\HttpUtils.cs" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\FogBugzNet\HttpUtils.cs">
+</Event><Event ErrorLevel="0" Project="FogBugzNet" Source="..\FogBugzNet\Importer.cs" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\FogBugzNet\Importer.cs">
+</Event><Event ErrorLevel="0" Project="FogBugzNet" Source="..\FogBugzNet\MileStone.cs" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\FogBugzNet\MileStone.cs">
+</Event><Event ErrorLevel="0" Project="FogBugzNet" Source="..\FogBugzNet\ProjectNode.cs" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\FogBugzNet\ProjectNode.cs">
+</Event><Event ErrorLevel="0" Project="FogBugzNet" Source="..\FogBugzNet\Properties\AssemblyInfo.cs" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\FogBugzNet\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="FogBugzNet" Source="..\FogBugzNet\Search.cs" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\FogBugzNet\Search.cs">
+</Event><Event ErrorLevel="0" Project="FogBugzNet" Source="..\FogBugzNet\Utils.cs" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\FogBugzNet\Utils.cs">
+</Event><Event ErrorLevel="0" Project="FogBugzNet" Source="..\FogBugzNet\WikiArticle.cs" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\FogBugzNet\WikiArticle.cs">
+</Event><Event ErrorLevel="1" Project="FogBugzNet" Source="..\FogBugzNet\FogBugzNet.csproj" Description="Your project is targeting .NET Framework 2.0 or 3.0. If your project uses assemblies requiring a newer .NET Framework, your project will fail to build. You can change the .NET Framework version by clicking Properties on the project menu and then selecting a new version in the '.NET Framework' dropdown box. (In Visual Basic, this is located on the Compile tab by clicking the 'Advanced Compiler Options...' button.)">
+</Event><Event ErrorLevel="0" Project="FogBugzNet" Source="..\FogBugzNet\FogBugzNet.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="FogBugzNet" Source="..\FogBugzNet\FogBugzNet.csproj" Description="Converted">
+</Event><Event ErrorLevel="1" Project="Stalker" Source="..\Stalker\Stalker.csproj" Description="Warning: The project file is being backed up to a relative path that differs from the original solution relative path.  The difference in folder hierarchy may create problems in opening or building the backed up solution and project.">
+</Event><Event ErrorLevel="0" Project="Stalker" Source="..\Stalker\Stalker.csproj" Description="Project file successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\Stalker\Stalker.csproj">
+</Event><Event ErrorLevel="0" Project="Stalker" Source="..\Stalker\Form1.cs" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\Stalker\Form1.cs">
+</Event><Event ErrorLevel="0" Project="Stalker" Source="..\Stalker\Form1.Designer.cs" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\Stalker\Form1.Designer.cs">
+</Event><Event ErrorLevel="0" Project="Stalker" Source="..\Stalker\Program.cs" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\Stalker\Program.cs">
+</Event><Event ErrorLevel="0" Project="Stalker" Source="..\Stalker\Properties\AssemblyInfo.cs" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\Stalker\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="Stalker" Source="..\Stalker\Properties\Resources.Designer.cs" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\Stalker\Properties\Resources.Designer.cs">
+</Event><Event ErrorLevel="0" Project="Stalker" Source="..\Stalker\Properties\Settings.Designer.cs" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\Stalker\Properties\Settings.Designer.cs">
+</Event><Event ErrorLevel="0" Project="Stalker" Source="..\Stalker\Properties\Settings.settings" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\Stalker\Properties\Settings.settings">
+</Event><Event ErrorLevel="0" Project="Stalker" Source="..\Stalker\Form1.resx" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\Stalker\Form1.resx">
+</Event><Event ErrorLevel="0" Project="Stalker" Source="..\Stalker\Properties\Resources.resx" Description="File successfully backed up as C:\Tools\CaseTracker\projects\CaseTracker\Backup\Stalker\Properties\Resources.resx">
+</Event><Event ErrorLevel="0" Project="Stalker" Source="..\Stalker\Stalker.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Stalker" Source="..\Stalker\Stalker.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="CaseTracker.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="CaseTracker.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="CaseTracker" Source="CaseTracker.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="FogBugzNet" Source="..\FogBugzNet\FogBugzNet.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="Stalker" Source="..\Stalker\Stalker.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

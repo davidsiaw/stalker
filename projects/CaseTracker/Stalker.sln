@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FogBugzNet", "..\FogBugzNet\FogBugzNet.csproj", "{FD76A654-B990-4D68-A7CF-852C3053B843}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stalker", "..\Stalker\Stalker.csproj", "{D54F78DA-9709-4971-9B6F-B9E80A0A8487}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kiln.Net", "..\..\..\kiln-net\src\Kiln.Net\Kiln.Net.csproj", "{3CCF84CB-B737-4B4C-A8CB-35A192B9EED3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlueBlocksLib", "..\..\..\blueblocks\BlueBlocksLib\BlueBlocksLib.csproj", "{3E610D1E-838A-4EAB-80AE-CA4E78C2D83A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HgNet", "..\..\..\..\Experiments\HgControl\HgNet\HgNet.csproj", "{C9A71970-81AE-4552-858D-35DCEFB2CE58}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataTable", "DataTable\DataTable.csproj", "{AFD7BC92-D2BE-4854-8E20-5852FFCDAC0B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FD76A654-B990-4D68-A7CF-852C3053B843}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD76A654-B990-4D68-A7CF-852C3053B843}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD76A654-B990-4D68-A7CF-852C3053B843}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD76A654-B990-4D68-A7CF-852C3053B843}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D54F78DA-9709-4971-9B6F-B9E80A0A8487}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D54F78DA-9709-4971-9B6F-B9E80A0A8487}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D54F78DA-9709-4971-9B6F-B9E80A0A8487}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D54F78DA-9709-4971-9B6F-B9E80A0A8487}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CCF84CB-B737-4B4C-A8CB-35A192B9EED3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CCF84CB-B737-4B4C-A8CB-35A192B9EED3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CCF84CB-B737-4B4C-A8CB-35A192B9EED3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CCF84CB-B737-4B4C-A8CB-35A192B9EED3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E610D1E-838A-4EAB-80AE-CA4E78C2D83A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E610D1E-838A-4EAB-80AE-CA4E78C2D83A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E610D1E-838A-4EAB-80AE-CA4E78C2D83A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E610D1E-838A-4EAB-80AE-CA4E78C2D83A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9A71970-81AE-4552-858D-35DCEFB2CE58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9A71970-81AE-4552-858D-35DCEFB2CE58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9A71970-81AE-4552-858D-35DCEFB2CE58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9A71970-81AE-4552-858D-35DCEFB2CE58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFD7BC92-D2BE-4854-8E20-5852FFCDAC0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFD7BC92-D2BE-4854-8E20-5852FFCDAC0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFD7BC92-D2BE-4854-8E20-5852FFCDAC0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFD7BC92-D2BE-4854-8E20-5852FFCDAC0B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

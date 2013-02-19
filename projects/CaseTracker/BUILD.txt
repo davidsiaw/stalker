@@ -1,0 +1,4 @@
+1. Install VS 2008 (VC#)
+2. Install InnoSetup if you wish to build the installer: http://www.jrsoftware.org/isdl.php
+3. Build the solution: CaseTracker.sln
+4. Install NUnit if you wish to run the unit tests (but not necessary to build)

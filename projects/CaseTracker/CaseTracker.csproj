@@ -1,0 +1,349 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F4F7D42F-838F-4E3C-84AF-80A7D6CA655C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FogBugzCaseTracker</RootNamespace>
+    <AssemblyName>CaseTracker</AssemblyName>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ApplicationIcon>Resources\icon.ico</ApplicationIcon>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <ApplicationRevision>0</ApplicationRevision>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishUrl>C:\shared\tools\fogbugz\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationVersion>1.1.0.%2a</ApplicationVersion>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Log4Net\release\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.core, Version=2.5.3.9345, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\NUnit\nunit.core.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.5.3.9345, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\NUnit\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutDlg.Designer.cs">
+      <DependentUpon>AboutDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AutoUpdater.cs" />
+    <Compile Include="Crypto.cs" />
+    <Compile Include="CultureAwareBackgroundWorker.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="EstimateDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EstimateDialog.Designer.cs">
+      <DependentUpon>EstimateDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FilterModel.cs" />
+    <Compile Include="HoverWindow\CaseList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HoverWindow\Excel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HoverWindow\Filtering.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HoverWindow\FreeMind.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HoverWindow\HoverWindowController.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HoverWindow\HoverWindowState.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HoverWindow\Interop.cs" />
+    <Compile Include="HoverWindow\SearchHistory.cs" />
+    <Compile Include="ImportConfirmationDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImportConfirmationDlg.Designer.cs">
+      <DependentUpon>ImportConfirmationDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HoverWindow\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MultiImageButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MultiImageButton.Designer.cs">
+      <DependentUpon>MultiImageButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MultiImageToolStripMenuItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MultiImageToolStripMenuItem.Designer.cs">
+      <DependentUpon>MultiImageToolStripMenuItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AboutDlg.resx">
+      <DependentUpon>AboutDlg.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EstimateDialog.resx">
+      <DependentUpon>EstimateDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImportConfirmationDlg.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ImportConfirmationDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FilterDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FilterDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HoverWindow\HoverWindow.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>HoverWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingsDlg.resx">
+      <DependentUpon>SettingsDlg.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VersionUpdatePrompt.resx">
+      <DependentUpon>VersionUpdatePrompt.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="FilterDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FilterDialog.Designer.cs">
+      <DependentUpon>FilterDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HoverWindow\HoverWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HoverWindow\HoverWindow.Designer.cs">
+      <DependentUpon>HoverWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HoverWindow\Tracking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingsDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingsDlg.Designer.cs">
+      <DependentUpon>SettingsDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsModel.cs" />
+    <Compile Include="VersionString.cs" />
+    <Compile Include="VersionUpdatePrompt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VersionUpdatePrompt.Designer.cs">
+      <DependentUpon>VersionUpdatePrompt.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Config\app.config" />
+    <None Include="Resources\icon.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check_icon.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\key.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\firefox_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ellipsis_vertical.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fat_check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new_case.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\excel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FogBugzNet\FogBugzNet.csproj">
+      <Project>{FD76A654-B990-4D68-A7CF-852C3053B843}</Project>
+      <Name>FogBugzNet</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\freemind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\busy.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pause.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh_disabled.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filter_disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new_case_disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check_icon_disabled.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fat_check_disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\firefox_16_disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\key_disabled.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\excel_disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\freemind_disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pause_disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\outline_disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clock_disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check_disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stop_disabled.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>
