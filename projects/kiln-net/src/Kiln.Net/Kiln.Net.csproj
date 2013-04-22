@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3CCF84CB-B737-4B4C-A8CB-35A192B9EED3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KilnApi</RootNamespace>
+    <AssemblyName>Kiln.Net</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <NoWarn>0649</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <NoWarn>0649</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Helpers\SecureStringHelper.cs" />
+    <Compile Include="Kiln.Calls.cs" />
+    <Compile Include="Kiln.cs" />
+    <Compile Include="KilnApiCall.cs" />
+    <Compile Include="Helpers\KilnErrorsWrapper.cs" />
+    <Compile Include="Helpers\PatternParser.cs" />
+    <Compile Include="Records\Alias.cs" />
+    <Compile Include="Records\Annotation.cs" />
+    <Compile Include="Records\Cat.cs" />
+    <Compile Include="Records\Changeset.cs" />
+    <Compile Include="Records\Diff.cs" />
+    <Compile Include="Records\Manifest.cs" />
+    <Compile Include="Records\ModificationType.cs" />
+    <Compile Include="Records\RepositoryGroup.cs" />
+    <Compile Include="Records\KilnError.cs" />
+    <Compile Include="KilnApiException.cs" />
+    <Compile Include="Records\KilnErrorCode.cs" />
+    <Compile Include="Records\Person.cs" />
+    <Compile Include="Records\Project.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Records\Repository.cs" />
+    <Compile Include="Records\RepositoryStatus.cs" />
+    <Compile Include="Records\Permission.cs" />
+    <Compile Include="Records\Review.cs" />
+    <Compile Include="Helpers\ReviewsWrapper.cs" />
+    <Compile Include="Records\ReviewStatus.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

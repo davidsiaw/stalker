@@ -35,7 +35,7 @@
     <SuiteName>Dave%27s Toolz</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>stalker.html</WebPage>
-    <ApplicationRevision>43</ApplicationRevision>
+    <ApplicationRevision>44</ApplicationRevision>
     <ApplicationVersion>1.1.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -205,10 +205,6 @@
       <Project>{C9A71970-81AE-4552-858D-35DCEFB2CE58}</Project>
       <Name>HgNet</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\kiln-net\src\Kiln.Net\Kiln.Net.csproj">
-      <Project>{3CCF84CB-B737-4B4C-A8CB-35A192B9EED3}</Project>
-      <Name>Kiln.Net</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\blueblocks\BlueBlocksLib\BlueBlocksLib.csproj">
       <Project>{3E610D1E-838A-4EAB-80AE-CA4E78C2D83A}</Project>
       <Name>BlueBlocksLib</Name>
@@ -220,6 +216,10 @@
     <ProjectReference Include="..\FogBugzNet\FogBugzNet.csproj">
       <Project>{FD76A654-B990-4D68-A7CF-852C3053B843}</Project>
       <Name>FogBugzNet</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\kiln-net\src\Kiln.Net\Kiln.Net.csproj">
+      <Project>{3CCF84CB-B737-4B4C-A8CB-35A192B9EED3}</Project>
+      <Name>Kiln.Net</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

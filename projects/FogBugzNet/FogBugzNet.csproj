@@ -91,13 +91,13 @@
     <Compile Include="WikiArticle.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\kiln-net\src\Kiln.Net\Kiln.Net.csproj">
-      <Project>{3CCF84CB-B737-4B4C-A8CB-35A192B9EED3}</Project>
-      <Name>Kiln.Net</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\blueblocks\BlueBlocksLib\BlueBlocksLib.csproj">
       <Project>{3E610D1E-838A-4EAB-80AE-CA4E78C2D83A}</Project>
       <Name>BlueBlocksLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\kiln-net\src\Kiln.Net\Kiln.Net.csproj">
+      <Project>{3CCF84CB-B737-4B4C-A8CB-35A192B9EED3}</Project>
+      <Name>Kiln.Net</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
