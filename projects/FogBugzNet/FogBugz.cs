@@ -125,14 +125,16 @@ namespace FogBugzNet
                 token_ = doc.SelectSingleNode("//token").InnerText;
 
 				try {
-					kilnBaseURL = this.BaseURL_.Replace("https://", "").Split('.')[0] + ".kilnhg.com";
+					kilnBaseURL = this.BaseURL_.Replace("https://", "").Split('.')[0] + ".kilnhg.com" + "/";
 
 					kiln = Kiln.Authenticate(
 						kilnBaseURL,
 						Uri.UnescapeDataString(email),
 						Uri.UnescapeDataString(password));
 					
-				} catch { }
+				} catch (Exception e) {
+					Console.WriteLine(e.Message);
+				}
 
                 return true;
             }
@@ -274,6 +276,7 @@ namespace FogBugzNet
                 c.Name = node.SelectSingleNode("sTitle").InnerText;
                 c.ParentProject.Name = node.SelectSingleNode("sProject").InnerText;
                 c.ParentProject.ID = int.Parse(node.SelectSingleNode("ixProject").InnerText);
+				c.Status = node.SelectSingleNode("sStatus").InnerText;
 
                 c.AssignedTo = node.SelectSingleNode("sPersonAssignedTo").InnerText;
                 c.Area = node.SelectSingleNode("sArea").InnerText;
@@ -294,9 +297,7 @@ namespace FogBugzNet
 
 				c.caseEvents = TypeTools.XMLFunnel<Case.Events>(node.SelectSingleNode("events"));
 
-				Changeset[] changesets = kiln.GetChangesets(c.ID);
-
-				c.changeSets = changesets.Select(x => new FogBugzNet.Case.ChangesetData() { 
+				c.getchangeSets = () => kiln.GetChangesets(c.ID).Select(x => new FogBugzNet.Case.ChangesetData() {
 					changeSet = x,
 					kilnapi = kiln
 				}).ToArray();
@@ -432,7 +433,7 @@ namespace FogBugzNet
 			Case[] cs;
 
 			progressDelegate("Asking for your cases...", 30);
-			string res = fbCommandSync("search", "q=" + search, "cols=sTitle,sProject,ixProject,sPersonAssignedTo,sArea,hrsElapsed,hrsCurrEst,ixBugParent,ixFixFor,sFixFor,sCategory,ixPriority,events");
+			string res = fbCommandSync("search", "q=" + search, "cols=sTitle,sStatus,sProject,ixProject,sPersonAssignedTo,sArea,hrsElapsed,hrsCurrEst,ixBugParent,ixFixFor,sFixFor,sCategory,ixPriority,events");
 
 			cs = ParseCasesXML(xmlDoc(res), progressDelegate);
 			return cs;

@@ -16,6 +16,7 @@ using System.Security.Cryptography;
 using System.Diagnostics;
 using HgNet;
 using System.Text.RegularExpressions;
+using KilnApi;
 
 namespace Stalker {
 	public partial class Form1 : Form {
@@ -62,7 +63,18 @@ namespace Stalker {
 
 		void UpdateUI(Action<string,int> progressDelegate) {
 			try {
-				var p = fb.UpdateAllStuff("AssignedTo:\"me\"", progressDelegate);
+
+				string name = "me";
+				string project = "";
+
+				Invoke(new Action(() => {
+					try {
+						name = combo_people.SelectedItem.ToString();
+						project = cmb_project.SelectedItem.ToString();
+					} catch { }
+				}));
+
+				var p = fb.UpdateAllStuff(string.Format("AssignedTo:\"{0}\" project:\"{1}\"", name, project), progressDelegate);
 
 				Case currentcase = null;
 				FBCase[] cases = new FBCase[p.Length];
@@ -200,13 +212,29 @@ namespace Stalker {
 					}
 				}
 
-
-
-
 				FBCase[] c = new FBCase[0];
 				sp.PuttingTicketsUp();
 				Invoke(new Action(() => {
 					Utilities.InterfaceToDataGridView(c, dataGridView1);
+				}));
+
+				var persons = fb.Kiln.GetPersons().OrderBy(x => x.ToString());
+				var projects = fb.Kiln.GetProjects();
+				Invoke(new Action(() => {
+					combo_people.Items.Clear();
+					cmb_project.Items.Clear();
+					foreach (var person in persons) {
+						combo_people.Items.Add(person);
+						if (person.Email == fb.Email) {
+							combo_people.SelectedItem = person;
+						}
+					}
+
+					cmb_project.Items.Add("");
+					foreach (var project in projects) {
+						cmb_project.Items.Add(project);
+					}
+					cmb_project.SelectedItem = "";
 				}));
 
 				Head[] be = new Head[0];
@@ -378,6 +406,22 @@ namespace Stalker {
 						UpdateHGInfo();
 					});
 				} catch { } finally { }
+			}
+		}
+
+		private void combo_people_SelectedIndexChanged(object sender, EventArgs e) {
+			if (combo_people.SelectedItem != null) {
+				sideProcessor.SendMessage(() => {
+					PeriodicUpdate();
+				});
+			}
+		}
+
+		private void cmb_project_SelectedIndexChanged(object sender, EventArgs e) {
+			if (combo_people.SelectedItem != null) {
+				sideProcessor.SendMessage(() => {
+					PeriodicUpdate();
+				});
 			}
 		}
 

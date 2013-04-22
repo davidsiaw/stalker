@@ -43,6 +43,10 @@
 			this.label1 = new System.Windows.Forms.Label();
 			this.statusStrip1 = new System.Windows.Forms.StatusStrip();
 			this.statuslabel = new System.Windows.Forms.ToolStripStatusLabel();
+			this.label2 = new System.Windows.Forms.Label();
+			this.combo_people = new System.Windows.Forms.ComboBox();
+			this.label3 = new System.Windows.Forms.Label();
+			this.cmb_project = new System.Windows.Forms.ComboBox();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			this.flowLayoutPanel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -68,7 +72,7 @@
 			this.dataGridView1.Location = new System.Drawing.Point(0, 0);
 			this.dataGridView1.Name = "dataGridView1";
 			this.dataGridView1.RowHeadersVisible = false;
-			this.dataGridView1.Size = new System.Drawing.Size(785, 526);
+			this.dataGridView1.Size = new System.Drawing.Size(820, 526);
 			this.dataGridView1.TabIndex = 0;
 			this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
 			// 
@@ -77,17 +81,21 @@
 			this.progressBar1.Dock = System.Windows.Forms.DockStyle.Bottom;
 			this.progressBar1.Location = new System.Drawing.Point(0, 753);
 			this.progressBar1.Name = "progressBar1";
-			this.progressBar1.Size = new System.Drawing.Size(785, 23);
+			this.progressBar1.Size = new System.Drawing.Size(820, 23);
 			this.progressBar1.TabIndex = 1;
 			// 
 			// flowLayoutPanel1
 			// 
 			this.flowLayoutPanel1.Controls.Add(this.btn_someoneelse);
 			this.flowLayoutPanel1.Controls.Add(this.txt_search);
+			this.flowLayoutPanel1.Controls.Add(this.label3);
+			this.flowLayoutPanel1.Controls.Add(this.cmb_project);
+			this.flowLayoutPanel1.Controls.Add(this.label2);
+			this.flowLayoutPanel1.Controls.Add(this.combo_people);
 			this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
 			this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
 			this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-			this.flowLayoutPanel1.Size = new System.Drawing.Size(785, 28);
+			this.flowLayoutPanel1.Size = new System.Drawing.Size(820, 28);
 			this.flowLayoutPanel1.TabIndex = 2;
 			// 
 			// btn_someoneelse
@@ -96,7 +104,7 @@
 			this.btn_someoneelse.Name = "btn_someoneelse";
 			this.btn_someoneelse.Size = new System.Drawing.Size(108, 22);
 			this.btn_someoneelse.TabIndex = 0;
-			this.btn_someoneelse.Text = "I\'m Someone Else!";
+			this.btn_someoneelse.Text = "LOGOUT";
 			this.btn_someoneelse.UseVisualStyleBackColor = true;
 			this.btn_someoneelse.Click += new System.EventHandler(this.btn_someoneelse_Click);
 			// 
@@ -124,7 +132,7 @@
 			// 
 			this.splitContainer1.Panel2.Controls.Add(this.data_branches);
 			this.splitContainer1.Panel2.Controls.Add(this.panel1);
-			this.splitContainer1.Size = new System.Drawing.Size(785, 725);
+			this.splitContainer1.Size = new System.Drawing.Size(820, 725);
 			this.splitContainer1.SplitterDistance = 526;
 			this.splitContainer1.TabIndex = 3;
 			// 
@@ -140,7 +148,7 @@
 			this.data_branches.Location = new System.Drawing.Point(0, 88);
 			this.data_branches.Name = "data_branches";
 			this.data_branches.RowHeadersVisible = false;
-			this.data_branches.Size = new System.Drawing.Size(785, 107);
+			this.data_branches.Size = new System.Drawing.Size(820, 107);
 			this.data_branches.TabIndex = 0;
 			// 
 			// panel1
@@ -152,7 +160,7 @@
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
 			this.panel1.Location = new System.Drawing.Point(0, 0);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(785, 88);
+			this.panel1.Size = new System.Drawing.Size(820, 88);
 			this.panel1.TabIndex = 1;
 			// 
 			// flowLayoutPanel3
@@ -162,7 +170,7 @@
 			this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
 			this.flowLayoutPanel3.Location = new System.Drawing.Point(0, 59);
 			this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-			this.flowLayoutPanel3.Size = new System.Drawing.Size(785, 29);
+			this.flowLayoutPanel3.Size = new System.Drawing.Size(820, 29);
 			this.flowLayoutPanel3.TabIndex = 3;
 			// 
 			// txt_commitMessage
@@ -191,7 +199,7 @@
 			this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
 			this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 33);
 			this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-			this.flowLayoutPanel2.Size = new System.Drawing.Size(785, 26);
+			this.flowLayoutPanel2.Size = new System.Drawing.Size(820, 26);
 			this.flowLayoutPanel2.TabIndex = 2;
 			// 
 			// lbl_incoming
@@ -248,7 +256,7 @@
 			this.txt_workingCopy.Location = new System.Drawing.Point(0, 13);
 			this.txt_workingCopy.Name = "txt_workingCopy";
 			this.txt_workingCopy.ReadOnly = true;
-			this.txt_workingCopy.Size = new System.Drawing.Size(785, 20);
+			this.txt_workingCopy.Size = new System.Drawing.Size(820, 20);
 			this.txt_workingCopy.TabIndex = 1;
 			this.txt_workingCopy.Click += new System.EventHandler(this.txt_workingCopy_Click);
 			// 
@@ -268,7 +276,7 @@
             this.statuslabel});
 			this.statusStrip1.Location = new System.Drawing.Point(0, 776);
 			this.statusStrip1.Name = "statusStrip1";
-			this.statusStrip1.Size = new System.Drawing.Size(785, 22);
+			this.statusStrip1.Size = new System.Drawing.Size(820, 22);
 			this.statusStrip1.TabIndex = 4;
 			this.statusStrip1.Text = "statusStrip1";
 			// 
@@ -278,11 +286,47 @@
 			this.statuslabel.Size = new System.Drawing.Size(26, 17);
 			this.statuslabel.Text = "Idle";
 			// 
+			// label2
+			// 
+			this.label2.Location = new System.Drawing.Point(526, 0);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(81, 23);
+			this.label2.TabIndex = 2;
+			this.label2.Text = "Assigned To:";
+			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			// 
+			// combo_people
+			// 
+			this.combo_people.FormattingEnabled = true;
+			this.combo_people.Location = new System.Drawing.Point(613, 3);
+			this.combo_people.Name = "combo_people";
+			this.combo_people.Size = new System.Drawing.Size(194, 21);
+			this.combo_people.TabIndex = 3;
+			this.combo_people.SelectedIndexChanged += new System.EventHandler(this.combo_people_SelectedIndexChanged);
+			// 
+			// label3
+			// 
+			this.label3.Location = new System.Drawing.Point(258, 0);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(62, 23);
+			this.label3.TabIndex = 4;
+			this.label3.Text = "Project:";
+			this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			// 
+			// cmb_project
+			// 
+			this.cmb_project.FormattingEnabled = true;
+			this.cmb_project.Location = new System.Drawing.Point(326, 3);
+			this.cmb_project.Name = "cmb_project";
+			this.cmb_project.Size = new System.Drawing.Size(194, 21);
+			this.cmb_project.TabIndex = 5;
+			this.cmb_project.SelectedIndexChanged += new System.EventHandler(this.cmb_project_SelectedIndexChanged);
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(785, 798);
+			this.ClientSize = new System.Drawing.Size(820, 798);
 			this.Controls.Add(this.splitContainer1);
 			this.Controls.Add(this.progressBar1);
 			this.Controls.Add(this.flowLayoutPanel1);
@@ -333,6 +377,10 @@
 		private System.Windows.Forms.ToolStripStatusLabel statuslabel;
 		private System.Windows.Forms.TextBox txt_commitMessage;
 		private System.Windows.Forms.Label lbl_outgoing;
+		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.ComboBox combo_people;
+		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.ComboBox cmb_project;
 	}
 }
 

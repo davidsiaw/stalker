@@ -35,8 +35,8 @@
     <SuiteName>Dave%27s Toolz</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>stalker.html</WebPage>
-    <ApplicationRevision>41</ApplicationRevision>
-    <ApplicationVersion>0.9.0.%2a</ApplicationVersion>
+    <ApplicationRevision>43</ApplicationRevision>
+    <ApplicationVersion>1.1.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>

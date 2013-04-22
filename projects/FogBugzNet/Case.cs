@@ -15,6 +15,7 @@ namespace FogBugzNet {
 
 		public class Event {
 
+			public int bugid;
 			public int ixBugEvent;
 			public string sVerb;
 			public int ixPerson;
@@ -61,17 +62,24 @@ namespace FogBugzNet {
 			}
 		}
 
-		public Review kilnReview = null; // The review in kiln
-		public bool reviewAssignedToMe = false;
-		public bool assignedReviewToSelf = false;
-		public ChangesetData[] changeSets;
+		public Func<ChangesetData[]> getchangeSets { set; get; }
+		ChangesetData[] csets = null;
+		public ChangesetData[] changeSets {
+			get {
+				if (csets == null) {
+					csets = getchangeSets();
+				}
+				return csets;
+			}
+		}
 
-		public bool closed = false;
+		public int ID;
+		public string Name;
+		public string Status;
+		public int Priority;
 
         public TimeSpan Elapsed;
         public TimeSpan Estimate;
-        public int ID;
-        public string Name;
         public Project ParentProject;
 
         public string Area;
@@ -79,9 +87,12 @@ namespace FogBugzNet {
         public int ParentCaseID = 0;
         public string Category;
 
-		public int Priority;
+		public Review kilnReview = null; // The review in kiln
+		public bool reviewAssignedToMe = false;
+		public bool assignedReviewToSelf = false;
 
 		public Events caseEvents;
+		public bool closed;
 
         public MileStone ParentMileStone = new MileStone();
 
