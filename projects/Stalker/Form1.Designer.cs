@@ -28,6 +28,10 @@
 			this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
 			this.btn_someoneelse = new System.Windows.Forms.Button();
 			this.txt_search = new System.Windows.Forms.TextBox();
+			this.label3 = new System.Windows.Forms.Label();
+			this.cmb_project = new System.Windows.Forms.ComboBox();
+			this.label2 = new System.Windows.Forms.Label();
+			this.combo_people = new System.Windows.Forms.ComboBox();
 			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
 			this.data_branches = new System.Windows.Forms.DataGridView();
 			this.panel1 = new System.Windows.Forms.Panel();
@@ -43,10 +47,6 @@
 			this.label1 = new System.Windows.Forms.Label();
 			this.statusStrip1 = new System.Windows.Forms.StatusStrip();
 			this.statuslabel = new System.Windows.Forms.ToolStripStatusLabel();
-			this.label2 = new System.Windows.Forms.Label();
-			this.combo_people = new System.Windows.Forms.ComboBox();
-			this.label3 = new System.Windows.Forms.Label();
-			this.cmb_project = new System.Windows.Forms.ComboBox();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			this.flowLayoutPanel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -116,6 +116,42 @@
 			this.txt_search.TabIndex = 1;
 			this.txt_search.TextChanged += new System.EventHandler(this.txt_search_TextChanged);
 			this.txt_search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_search_KeyDown);
+			// 
+			// label3
+			// 
+			this.label3.Location = new System.Drawing.Point(258, 0);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(62, 23);
+			this.label3.TabIndex = 4;
+			this.label3.Text = "Project:";
+			this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			// 
+			// cmb_project
+			// 
+			this.cmb_project.FormattingEnabled = true;
+			this.cmb_project.Location = new System.Drawing.Point(326, 3);
+			this.cmb_project.Name = "cmb_project";
+			this.cmb_project.Size = new System.Drawing.Size(194, 21);
+			this.cmb_project.TabIndex = 5;
+			this.cmb_project.SelectedIndexChanged += new System.EventHandler(this.cmb_project_SelectedIndexChanged);
+			// 
+			// label2
+			// 
+			this.label2.Location = new System.Drawing.Point(526, 0);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(81, 23);
+			this.label2.TabIndex = 2;
+			this.label2.Text = "Assigned To:";
+			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			// 
+			// combo_people
+			// 
+			this.combo_people.FormattingEnabled = true;
+			this.combo_people.Location = new System.Drawing.Point(613, 3);
+			this.combo_people.Name = "combo_people";
+			this.combo_people.Size = new System.Drawing.Size(194, 21);
+			this.combo_people.TabIndex = 3;
+			this.combo_people.SelectedIndexChanged += new System.EventHandler(this.combo_people_SelectedIndexChanged);
 			// 
 			// splitContainer1
 			// 
@@ -285,42 +321,6 @@
 			this.statuslabel.Name = "statuslabel";
 			this.statuslabel.Size = new System.Drawing.Size(26, 17);
 			this.statuslabel.Text = "Idle";
-			// 
-			// label2
-			// 
-			this.label2.Location = new System.Drawing.Point(526, 0);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(81, 23);
-			this.label2.TabIndex = 2;
-			this.label2.Text = "Assigned To:";
-			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			// 
-			// combo_people
-			// 
-			this.combo_people.FormattingEnabled = true;
-			this.combo_people.Location = new System.Drawing.Point(613, 3);
-			this.combo_people.Name = "combo_people";
-			this.combo_people.Size = new System.Drawing.Size(194, 21);
-			this.combo_people.TabIndex = 3;
-			this.combo_people.SelectedIndexChanged += new System.EventHandler(this.combo_people_SelectedIndexChanged);
-			// 
-			// label3
-			// 
-			this.label3.Location = new System.Drawing.Point(258, 0);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(62, 23);
-			this.label3.TabIndex = 4;
-			this.label3.Text = "Project:";
-			this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			// 
-			// cmb_project
-			// 
-			this.cmb_project.FormattingEnabled = true;
-			this.cmb_project.Location = new System.Drawing.Point(326, 3);
-			this.cmb_project.Name = "cmb_project";
-			this.cmb_project.Size = new System.Drawing.Size(194, 21);
-			this.cmb_project.TabIndex = 5;
-			this.cmb_project.SelectedIndexChanged += new System.EventHandler(this.cmb_project_SelectedIndexChanged);
 			// 
 			// Form1
 			// 

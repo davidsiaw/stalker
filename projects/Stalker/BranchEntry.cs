@@ -7,8 +7,6 @@ using System.Drawing;
 
 namespace Stalker {
 
-
-
 	class BranchEntry {
 		Branch m_b;
 		public BranchEntry(Branch b) {
