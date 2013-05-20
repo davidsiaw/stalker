@@ -95,6 +95,7 @@ namespace FogBugzNet {
 		public bool closed;
 
         public MileStone ParentMileStone = new MileStone();
+		public int CategoryID;
 
         public string ShortDescription { get { return ID + ": " + Name; } }
 

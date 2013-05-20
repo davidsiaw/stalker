@@ -24,6 +24,16 @@ namespace FogBugzNet
         public string ID;
     }
 
+	public struct Status {
+		public string Name;
+		public int ID;
+		public int CategoryID;
+
+		public override string ToString() {
+			return Name;
+		}
+	}
+
     public struct Project
     {
         public string Name;
@@ -226,8 +236,11 @@ namespace FogBugzNet
         public Filter[] GetFilters()
         {
 			return filters;
-
         }
+
+		public Status[] GetStatuses(int category) {
+			return statuses.Where(x => x.CategoryID == category).ToArray();
+		}
 
 		public void CommentOnCase(int caseID, string comments) {
 			Utils.Log.Debug("Commenting on case");
@@ -292,7 +305,8 @@ namespace FogBugzNet
                 c.Estimate = new TimeSpan((long)(hrsEstimate * 36000000000.0));
                 c.ParentMileStone.ID = int.Parse(node.SelectSingleNode("ixFixFor").InnerText);
                 c.ParentMileStone.Name = node.SelectSingleNode("sFixFor").InnerText;
-                c.Category = node.SelectSingleNode("sCategory").InnerText;
+				c.Category = node.SelectSingleNode("sCategory").InnerText;
+				c.CategoryID = int.Parse(node.SelectSingleNode("ixCategory").InnerText);
 				c.Priority = int.Parse(node.SelectSingleNode("ixPriority").InnerText);
 
 				c.caseEvents = TypeTools.XMLFunnel<Case.Events>(node.SelectSingleNode("events"));
@@ -356,6 +370,8 @@ namespace FogBugzNet
 
 			closedCases = new HashSet<int>();
 
+			progressDelegate("Getting Statuses...", 10);
+			QueryStatuses();
 			progressDelegate("Getting Projects...", 10);
 			QueryProjects();
 			progressDelegate("Getting Intervals...", 15);
@@ -433,7 +449,7 @@ namespace FogBugzNet
 			Case[] cs;
 
 			progressDelegate("Asking for your cases...", 30);
-			string res = fbCommandSync("search", "q=" + search, "cols=sTitle,sStatus,sProject,ixProject,sPersonAssignedTo,sArea,hrsElapsed,hrsCurrEst,ixBugParent,ixFixFor,sFixFor,sCategory,ixPriority,events");
+			string res = fbCommandSync("search", "q=" + search, "cols=sTitle,sStatus,sProject,ixProject,sPersonAssignedTo,sArea,hrsElapsed,hrsCurrEst,ixBugParent,ixFixFor,sFixFor,sCategory,ixCategory,ixPriority,events");
 
 			cs = ParseCasesXML(xmlDoc(res), progressDelegate);
 			return cs;
@@ -589,6 +605,17 @@ namespace FogBugzNet
 			return true;
         }
 
+		public bool SetStatus(int caseid, int statusID) {
+			Utils.Log.InfoFormat("Set case status {0} to {1}", caseid, statusID);
+
+			fbCommand(res => {
+				TimeSpan newEstimate = UpdateAllStuff(caseid.ToString(), (x, y) => { })[0].Estimate;
+
+			}, "edit", "ixBug=" + caseid.ToString(), "ixStatus=" + statusID);
+
+			return true;
+		}
+
 		Project[] projects;
 
         public Project[] ListProjects()
@@ -596,6 +623,26 @@ namespace FogBugzNet
 			return projects;
 
         }
+
+		Status[] statuses;
+
+		private void QueryStatuses() {
+			Utils.Log.Debug("Query list of statuses");
+			List<Status> ret = new List<Status>();
+
+			string res = fbCommandSync("listStatuses");
+			XmlDocument doc = xmlDoc(res);
+			XmlNodeList projs = doc.SelectNodes("//status");
+			foreach (XmlNode proj in projs) {
+				Status p = new Status();
+				p.ID = int.Parse(proj.SelectSingleNode("./ixStatus").InnerText);
+				p.Name = proj.SelectSingleNode("./sStatus").InnerText;
+				p.CategoryID = int.Parse(proj.SelectSingleNode("./ixCategory").InnerText);
+				ret.Add(p);
+			}
+
+			statuses = ret.ToArray();
+		}
 
 		private void QueryProjects() {
 			Utils.Log.Debug("Query list of projects");

@@ -35,8 +35,8 @@
     <SuiteName>Dave%27s Toolz</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>stalker.html</WebPage>
-    <ApplicationRevision>44</ApplicationRevision>
-    <ApplicationVersion>1.1.1.%2a</ApplicationVersion>
+    <ApplicationRevision>45</ApplicationRevision>
+    <ApplicationVersion>1.2.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -152,6 +152,12 @@
     <Compile Include="StartupProgress.Designer.cs">
       <DependentUpon>StartupProgress.cs</DependentUpon>
     </Compile>
+    <Compile Include="StatusList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StatusList.Designer.cs">
+      <DependentUpon>StatusList.cs</DependentUpon>
+    </Compile>
     <Compile Include="testery.cs" />
     <EmbeddedResource Include="CaseDetails.resx">
       <DependentUpon>CaseDetails.cs</DependentUpon>
@@ -188,6 +194,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StartupProgress.resx">
       <DependentUpon>StartupProgress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StatusList.resx">
+      <DependentUpon>StatusList.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="Properties\Settings.settings">

@@ -147,6 +147,20 @@ namespace Stalker {
 			return m_c.Estimate.ToReadableString();
 		}
 
+		[InitialWidth(70)]
+		public string Status(bool clicked) {
+			if (clicked) {
+				StatusList ed = new StatusList(m_fb, m_c);
+				var res = ed.ShowDialog();
+				if (res == DialogResult.OK) {
+					m_ci.SendMessage(() => {
+						m_fb.SetStatus(ID, ed.SelectedStatus.ID);
+					});
+				}
+			}
+			return m_c.Status;
+		}
+
 		[InitialWidth(50)]
 		public string Details(bool clicked) {
 			if (clicked) {
