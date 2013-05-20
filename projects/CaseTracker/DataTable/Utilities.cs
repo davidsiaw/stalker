@@ -214,13 +214,7 @@ namespace Stalker {
 				column.Name = pi.Name;
 				column.HeaderText = pi.Name;
 
-				if (pi.GetCustomAttributes(typeof(AutoSizeColumnAttribute), false).Length != 0) {
-					column.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-				} else if (pi.GetCustomAttributes(typeof(AutoFillColumnAttribute), false).Length != 0) {
-					column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-				} else if (pi.GetCustomAttributes(typeof(FixedSizeColumnAttribute), false).Length != 0) {
-					column.Width = GetFixedSizeAttr(pi).Size;
-				}
+				SetUpColumnWithAttributes(pi, column);
 
 				dgv.Columns.Add(column);
 			}
@@ -254,11 +248,7 @@ namespace Stalker {
 				dgvbc.Name = mi.Name;
 				dgvbc.HeaderText = mi.Name;
 
-				if (mi.GetCustomAttributes(typeof(AutoSizeColumnAttribute), false).Length != 0) {
-					dgvbc.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-				} else if (mi.GetCustomAttributes(typeof(AutoFillColumnAttribute), false).Length != 0) {
-					dgvbc.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-				}
+				SetUpColumnWithAttributes(mi, dgvbc);
 
 				dgv.Columns.Add(dgvbc);
 			}
@@ -268,8 +258,26 @@ namespace Stalker {
 			ApplyHandlers(dgv);
 		}
 
-		private static FixedSizeColumnAttribute GetFixedSizeAttr(PropertyInfo pi) {
-			return ((FixedSizeColumnAttribute)pi.GetCustomAttributes(typeof(FixedSizeColumnAttribute), false)[0]);
+		private static void SetUpColumnWithAttributes(MemberInfo pi, DataGridViewColumn column) {
+			if (pi.GetCustomAttributes(typeof(InitialWidthAttribute), false).Length != 0) {
+				column.Width = GetAttr<InitialWidthAttribute>(pi).Size;
+			}
+
+			if (pi.GetCustomAttributes(typeof(AutoSizeColumnAttribute), false).Length != 0) {
+				column.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+			} else if (pi.GetCustomAttributes(typeof(AutoFillColumnAttribute), false).Length != 0) {
+				column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+			} else if (pi.GetCustomAttributes(typeof(FixedSizeColumnAttribute), false).Length != 0) {
+				column.Width = GetAttr<FixedSizeColumnAttribute>(pi).Size;
+			}
+
+			if (pi.GetCustomAttributes(typeof(MinimumWidthAttribute), false).Length != 0) {
+				column.MinimumWidth = GetAttr<MinimumWidthAttribute>(pi).Size;
+			}
+		}
+
+		private static T GetAttr<T>(MemberInfo pi) where T : Attribute {
+			return ((T)pi.GetCustomAttributes(typeof(T), false)[0]);
 		}
 
 		private static void ApplyHandlers(DataGridView dgv) {

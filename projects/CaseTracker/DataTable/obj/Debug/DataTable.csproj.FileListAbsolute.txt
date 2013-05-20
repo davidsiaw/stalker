@@ -1,5 +1,0 @@
-C:\Tools\CaseTracker\projects\CaseTracker\DataTable\obj\Debug\ResolveAssemblyReference.cache
-C:\Tools\CaseTracker\projects\CaseTracker\DataTable\bin\Debug\DataTable.dll
-C:\Tools\CaseTracker\projects\CaseTracker\DataTable\bin\Debug\DataTable.pdb
-C:\Tools\CaseTracker\projects\CaseTracker\DataTable\obj\Debug\DataTable.dll
-C:\Tools\CaseTracker\projects\CaseTracker\DataTable\obj\Debug\DataTable.pdb

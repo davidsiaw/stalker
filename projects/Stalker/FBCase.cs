@@ -22,8 +22,8 @@ namespace Stalker {
 			m_ci = ci;
 			m_kiln = m_fb.Kiln;
 		}
-
-		[AutoSizeColumn]
+		
+		[InitialWidth(30)]
 		public bool WrkOn {
 			get {
 				return m_fb.CaseWorkedOnNow == m_c.ID;
@@ -45,21 +45,19 @@ namespace Stalker {
 			}
 		}
 
-		[AutoSizeColumn]
+		[InitialWidth(50)]
 		public int ID {
 			get {
 				return m_c.ID;
 			}
 		}
 
-		[AutoSizeColumn]
 		public string Project {
 			get {
 				return m_c.ParentProject.Name;
 			}
 		}
 
-		[AutoSizeColumn]
 		public string Area {
 			get {
 				return m_c.Area;
@@ -67,13 +65,14 @@ namespace Stalker {
 		}
 
 		[AutoFillColumn]
+		[MinimumWidth(200)]
 		public string Name {
 			get {
 				return m_c.Name;
 			}
 		}
 
-		[FixedSizeColumn(30)]
+		[InitialWidth(30)]
 		public int Prty {
 			get {
 				return m_c.Priority;
@@ -98,7 +97,7 @@ namespace Stalker {
 			}
 		}
 
-
+		[InitialWidth(70)]
 		public string Estimate(bool clicked) {
 			if (clicked) {
 
@@ -148,7 +147,7 @@ namespace Stalker {
 			return m_c.Estimate.ToReadableString();
 		}
 
-		[AutoSizeColumn]
+		[InitialWidth(50)]
 		public string Details(bool clicked) {
 			if (clicked) {
 				CaseDetails cd = new CaseDetails(m_c, m_fb, m_ci);
@@ -158,7 +157,7 @@ namespace Stalker {
 			return "Details";
 		}
 
-		[AutoSizeColumn]
+		[InitialWidth(50)]
 		public string GoTo(bool clicked) {
 			if (clicked) {
 
@@ -177,7 +176,7 @@ namespace Stalker {
 			return "Go to";
 		}
 
-		[AutoSizeColumn]
+		[InitialWidth(50)]
 		public string OTL(bool clicked) {
 			if (clicked) {
 

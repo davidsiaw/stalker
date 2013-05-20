@@ -5,9 +5,25 @@ using System.Text;
 
 namespace Stalker {
 
-	[AttributeUsage(AttributeTargets.Property)]
+	[AttributeUsage(AttributeTargets.Property | AttributeTargets.Method)]
 	public class AutoFillColumnAttribute : Attribute {
 
+	}
+
+	[AttributeUsage(AttributeTargets.Property | AttributeTargets.Method)]
+	public class MinimumWidthAttribute : Attribute {
+		public readonly int Size;
+		public MinimumWidthAttribute(int size) {
+			Size = size;
+		}
+	}
+
+	[AttributeUsage(AttributeTargets.Property | AttributeTargets.Method)]
+	public class InitialWidthAttribute : Attribute {
+		public readonly int Size;
+		public InitialWidthAttribute(int size) {
+			Size = size;
+		}
 	}
 
 	[AttributeUsage(AttributeTargets.Property | AttributeTargets.Method)]
