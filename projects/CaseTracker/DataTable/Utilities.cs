@@ -376,7 +376,7 @@ namespace Stalker {
 			}
 		}
 
-		public static void UpdateDataGridView<T>(IEnumerable<T> newset, DataGridView dgv, Func<T, string> keyExtractor) {
+		public static void UpdateDataGridView<T>(IEnumerable<T> newset, DataGridView dgv, Func<T, string> keyExtractor, Func<DataGridViewRow, Color> colorer = null) {
 
 			RemoveHandlers(dgv);
 
@@ -406,7 +406,7 @@ namespace Stalker {
 				}
 			}
 
-			Func<DataGridViewRow, Color> getColorFunc = GetRowColorer<T>();
+			Func<DataGridViewRow, Color> getColorFunc = colorer ?? GetRowColorer<T>();
 
 			rowsToRemove.ForEach(x => dgv.Rows.Remove(x));
 			InsertCollection(toInsert.Select(x => x.Value), dgv);

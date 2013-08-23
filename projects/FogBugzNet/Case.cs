@@ -40,7 +40,6 @@ namespace FogBugzNet {
 			public string sDate;
 			public string sBodyText;
 			public string sBodyHTML;
-
 		}
 
 		public class Attachments {
@@ -77,6 +76,7 @@ namespace FogBugzNet {
 		public string Name;
 		public string Status;
 		public int Priority;
+		public string[] Tags;
 
         public TimeSpan Elapsed;
         public TimeSpan Estimate;

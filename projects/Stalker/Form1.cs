@@ -17,6 +17,7 @@ using System.Diagnostics;
 using HgNet;
 using System.Text.RegularExpressions;
 using KilnApi;
+using BlueBlocksLib.SetUtils;
 
 namespace Stalker {
 	public partial class Form1 : Form {
@@ -61,6 +62,7 @@ namespace Stalker {
 			return true;
 		}
 
+		bool first = true;
 		void UpdateUI(Action<string,int> progressDelegate) {
 			try {
 
@@ -74,7 +76,11 @@ namespace Stalker {
 					} catch { }
 				}));
 
-				var p = fb.UpdateAllStuff(string.Format("AssignedTo:\"{0}\" project:\"{1}\"", name, project), progressDelegate);
+				var p = fb.UpdateAllStuff(string.Format("AssignedTo:\"{0}\" project:\"{1}\"", name, project), progressDelegate, !first);
+
+				if (first) {
+					first = false;
+				}
 
 				Case currentcase = null;
 				FBCase[] cases = new FBCase[p.Length];
@@ -82,7 +88,7 @@ namespace Stalker {
 					cases[i] = new FBCase(fb, p[i], commsInterface);
 
 					if (fb.CaseWorkedOnNow != 0) {
-						if (cases[i].ID == fb.CaseWorkedOnNow) {
+						if (cases[i].m_c.ID == fb.CaseWorkedOnNow) {
 							currentcase = p[i];
 						}
 					}
@@ -172,7 +178,6 @@ namespace Stalker {
 					sideProcessor.SendMessage(() => {
 						UpdateUI((x, y) => { });
 					});
-
 				});
 
 				if (!File.Exists("userlogin")) {
@@ -181,7 +186,6 @@ namespace Stalker {
 						return;
 					}
 				}
-
 
 				BinaryFormatter bf = new BinaryFormatter();
 				while (true) {
@@ -302,18 +306,6 @@ namespace Stalker {
 					}));
 				}
 
-				if (m.HasOutgoing()) {
-					BeginInvoke(new Action(() => {
-						lbl_outgoing.Text = "Outgoing Changes Queued";
-						lbl_outgoing.BackColor = Color.Yellow;
-					}));
-				} else {
-					BeginInvoke(new Action(() => {
-						lbl_outgoing.Text = "No Outgoing Changes";
-						lbl_outgoing.BackColor = Color.Green;
-					}));
-				}
-
 				if (m.GetModifiedFiles().Length == 0) {
 					BeginInvoke(new Action(() => {
 						lbl_wcuptodate.Text = "Working Copy Up To Date";
@@ -331,11 +323,57 @@ namespace Stalker {
 				}));
 
 				var relevant = m.GetBranches();
+				IEnumerable<Head> singleHeadedBranches;
+				IEnumerable<Head> multiHeadedBranches;
+				GetBranchInformation(relevant, out singleHeadedBranches, out multiHeadedBranches);
 
 				BeginInvoke(new Action(() => {
-					Utilities.UpdateDataGridView(relevant, data_branches, x => x.BranchName);
+
+					Utilities.UpdateDataGridView(singleHeadedBranches.Concat(multiHeadedBranches), data_branches, x => x.BranchName, (row) => {
+						if (((Head)row.Tag).BranchName.Contains("(merge required)")) {
+							return Color.Red;
+						}
+						return Color.White;
+					});
 				}));
+
+				if (multiHeadedBranches.Count() != 0) {
+					BeginInvoke(new Action(() => {
+						lbl_outgoing.Text = "Outgoing Multiple Heads: " + string.Join(", ", multiHeadedBranches.Select(x => x.branch));
+						lbl_outgoing.BackColor = Color.Red;
+					}));
+				}
+				else if (m.HasOutgoing()) {
+					BeginInvoke(new Action(() => {
+						lbl_outgoing.Text = "Outgoing Changes Queued";
+						lbl_outgoing.BackColor = Color.Yellow;
+					}));
+				} else {
+					BeginInvoke(new Action(() => {
+						lbl_outgoing.Text = "No Outgoing Changes";
+						lbl_outgoing.BackColor = Color.Green;
+					}));
+				}
 			}
+		}
+
+		private static void GetBranchInformation(Head[] relevant, out IEnumerable<Head> singleHeadedBranches, out IEnumerable<Head> multiHeadedBranches) {
+			OneToManyMap<string, Head> record = new OneToManyMap<string, Head>();
+
+			foreach (var rel in relevant) {
+				record.Add(rel.BranchName, rel);
+			}
+
+			singleHeadedBranches = record.Where(x => x.Value.Count() == 1).Select(x => x.Value.ToArray()[0]);
+			multiHeadedBranches = record.Where(x => x.Value.Count() > 1).Select(x => new Head() {
+				branch = x.Value.ToArray()[0].BranchName + " (merge required)",
+				changeset = string.Join(",", x.Value.Select(h => h.changeset)),
+				parent = string.Join(",", x.Value.Select(h => h.parent)),
+				user = string.Join(",", x.Value.Select(h => h.user)),
+				date = string.Join(",", x.Value.Select(h => h.date)),
+				summary = string.Join(",", x.Value.Select(h => h.summary)),
+				tag = string.Join(",", x.Value.Select(h => h.tag))
+			});
 		}
 
 
@@ -350,7 +388,7 @@ namespace Stalker {
 						if (!c.m_c.closed) {
 							fbcases.Add(c);
 						}
-						if (c.ID == fb.CaseWorkedOnNow) {
+						if (c.m_c.ID == fb.CaseWorkedOnNow) {
 							currcase = c.m_c;
 						}
 					}

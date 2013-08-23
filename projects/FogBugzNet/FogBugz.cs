@@ -305,9 +305,15 @@ namespace FogBugzNet
                 c.Estimate = new TimeSpan((long)(hrsEstimate * 36000000000.0));
                 c.ParentMileStone.ID = int.Parse(node.SelectSingleNode("ixFixFor").InnerText);
                 c.ParentMileStone.Name = node.SelectSingleNode("sFixFor").InnerText;
+
+				DateTime.TryParse(node.SelectSingleNode("dtFixFor").InnerText, out c.ParentMileStone.Date);
+
 				c.Category = node.SelectSingleNode("sCategory").InnerText;
 				c.CategoryID = int.Parse(node.SelectSingleNode("ixCategory").InnerText);
 				c.Priority = int.Parse(node.SelectSingleNode("ixPriority").InnerText);
+
+				XmlNode tags = node.SelectSingleNode("tags");
+				c.Tags = tags.SelectNodes("tag").Cast<XmlNode>().Select(x => x.InnerText).ToArray();
 
 				c.caseEvents = TypeTools.XMLFunnel<Case.Events>(node.SelectSingleNode("events"));
 
@@ -361,12 +367,12 @@ namespace FogBugzNet
 
 			#endregion
 		}
-
+		
         // Return all cases that match search (as in the web page search box)
 		// Yes. theoretically and the nomenclature suggests it. But what this
 		// function REALLY does is get ALL INFORMATION ABOUT EVERYTHING
 		// BWAAHAHAHAHAHAHAHAHAHAHA
-		public Case[] UpdateAllStuff(string search, System.Action<string, int> progressDelegate) {
+		public Case[] UpdateAllStuff(string search, System.Action<string, int> progressDelegate, bool getKilnCases = false) {
 
 			closedCases = new HashSet<int>();
 
@@ -378,12 +384,11 @@ namespace FogBugzNet
 			QueryIntervals();
 			progressDelegate("Getting Filters...", 20);
 			QueryFilters();
-			progressDelegate("Getting you worked on...", 25);
+			progressDelegate("Getting cases you worked on...", 25);
 			GetWorkedOnFromFB();
 
 			Utils.Log.DebugFormat("Querying for all cases that match '{0}'", search);
 			cases = GetCasesMatchingSearch(search, progressDelegate);
-
 
 			CasesRefreshed(this, new GenericEventArgs<Case[]>(cases));
 
@@ -392,35 +397,69 @@ namespace FogBugzNet
 
 			List<Case> fullCaseResults = new List<Case>(cases);
 
-			if (kiln != null) {
+			if (kiln != null && getKilnCases) {
+				progressDelegate("Getting reviews...", 30);
 				var reviews = kiln.GetReviewsRelatedToMe();
 
-				foreach (Review review in reviews.Author) {
-					int fogbugzReviewID;
-					if (int.TryParse(review.ID, out fogbugzReviewID)) {
-						if (idToCase.ContainsKey(fogbugzReviewID)) {
-							idToCase[fogbugzReviewID].kilnReview = review;
-						}
+				foreach (Review review in reviews.Approved) {
+					if (!review.ID.StartsWith("K")) {
+						continue;
 					}
-
-				}
-
-				foreach (Review review in reviews.AwaitingReview) {
-
-					int fogbugzReviewID;
-					if (int.TryParse(review.ID, out fogbugzReviewID)) {
-
-						if (idToCase.ContainsKey(fogbugzReviewID)) {
-							// if you are assigned a review that you own 
-							// (assigned a review to yourself)
-							idToCase[fogbugzReviewID].kilnReview = review;
-							idToCase[fogbugzReviewID].assignedReviewToSelf = true;
-
-						} else if (review.Status != ReviewStatus.Approved) {
-							MakeNewCaseForReview(fullCaseResults, review);
+					Review r = review;
+					if (review.Changesets == null) {
+						r = kiln.GetReview(review.ID);
+					}
+					foreach (var ch in r.Changesets) {
+						if (ch.AssociatedCases.Any(x => idToCase.ContainsKey(x))) {
+							var relc = ch.AssociatedCases.First(x => idToCase.ContainsKey(x));
+							MakeNewCaseForReview(fullCaseResults, review, relc);
+							break;
 						}
 					}
 				}
+
+				foreach (Review review in reviews.Rejected) {
+					if (!review.ID.StartsWith("K")) {
+						continue;
+					}
+					Review r = review;
+					if (review.Changesets == null) {
+						r = kiln.GetReview(review.ID);
+					}
+					foreach (var ch in r.Changesets) {
+						if (ch.AssociatedCases.Any(x => idToCase.ContainsKey(x))) {
+							var relc = ch.AssociatedCases.First(x => idToCase.ContainsKey(x));
+							MakeNewCaseForReview(fullCaseResults, review, relc);
+							break;
+						}
+					}
+				}
+
+				//foreach (Review review in reviews.Author) {
+				//    int fogbugzReviewID;
+				//    if (int.TryParse(review.ID, out fogbugzReviewID)) {
+				//        if (idToCase.ContainsKey(fogbugzReviewID)) {
+				//            idToCase[fogbugzReviewID].kilnReview = review;
+				//        }
+				//    }
+
+				//}
+
+				//foreach (Review review in reviews.AwaitingReview) {
+
+				//    int fogbugzReviewID;
+				//    if (int.TryParse(review.ID, out fogbugzReviewID)) {
+
+				//        if (idToCase.ContainsKey(fogbugzReviewID)) {
+				//            // if you are assigned a review that you own 
+				//            // (assigned a review to yourself)
+				//            idToCase[fogbugzReviewID].kilnReview = review;
+				//            idToCase[fogbugzReviewID].assignedReviewToSelf = true;
+
+				//        } else if (review.Status != ReviewStatus.Approved) {
+				//        }
+				//    }
+				//}
 			}
 
 			return fullCaseResults.Where(c => !closedCases.Contains(c.ID)).ToArray();
@@ -437,11 +476,14 @@ namespace FogBugzNet
 			c.closed = true;
 		}
 
-		private void MakeNewCaseForReview(List<Case> fullCaseResults, Review review) {
-			Case c = GetCasesMatchingSearch(review.ID.ToString(), (x, y) => { })[0];
-			c.kilnReview = review;
-			c.reviewAssignedToMe = true;
-			fullCaseResults.Add(c);
+		private void MakeNewCaseForReview(List<Case> fullCaseResults, Review review, int relatedCaseID) {
+			if (review.ID.StartsWith("K")) {
+				Case c = new Case();
+				c.kilnReview = review;
+				c.ID = relatedCaseID;
+				c.reviewAssignedToMe = true;
+				fullCaseResults.Add(c);
+			}
 		}
 
 		public Case[] GetCasesMatchingSearch(string search, System.Action<string, int> progressDelegate) {
@@ -449,7 +491,7 @@ namespace FogBugzNet
 			Case[] cs;
 
 			progressDelegate("Asking for your cases...", 30);
-			string res = fbCommandSync("search", "q=" + search, "cols=sTitle,sStatus,sProject,ixProject,sPersonAssignedTo,sArea,hrsElapsed,hrsCurrEst,ixBugParent,ixFixFor,sFixFor,sCategory,ixCategory,ixPriority,events");
+			string res = fbCommandSync("search", "q=" + search, "cols=sTitle,sStatus,sProject,ixProject,sPersonAssignedTo,sArea,hrsElapsed,hrsCurrEst,ixBugParent,ixFixFor,sFixFor,sCategory,ixCategory,ixPriority,events,tags,dtFixFor");
 
 			cs = ParseCasesXML(xmlDoc(res), progressDelegate);
 			return cs;
@@ -564,8 +606,8 @@ namespace FogBugzNet
             
         }
 
-		public string ReviewURL(int caseid) {
-			return "https://" + kilnBaseURL + "/Review/" + caseid.ToString();
+		public string ReviewURL(string reviewID) {
+			return "https://" + kilnBaseURL + "/Review/" + reviewID;
 		}
 
         // Returns the URL to edit this case (by id)

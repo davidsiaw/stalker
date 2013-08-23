@@ -46,6 +46,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\blueblocks\BlueBlocksLib\BlueBlocksLib.csproj">
+      <Project>{3E610D1E-838A-4EAB-80AE-CA4E78C2D83A}</Project>
+      <Name>BlueBlocksLib</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CaseTracker\DataTable\DataTable.csproj">
       <Project>{AFD7BC92-D2BE-4854-8E20-5852FFCDAC0B}</Project>
       <Name>DataTable</Name>

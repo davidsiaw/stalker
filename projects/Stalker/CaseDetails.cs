@@ -20,7 +20,7 @@ namespace Stalker {
 			InitializeComponent();
 
 			Case.Events events = c.caseEvents;
-
+			
 			foreach (Case.Event ev in events.@event) {
 				EventDisplayer ed = new EventDisplayer(ev, fb, ci);
 				if (!string.IsNullOrEmpty(ed.Text)) {

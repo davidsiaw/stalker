@@ -332,7 +332,7 @@
 			this.Controls.Add(this.flowLayoutPanel1);
 			this.Controls.Add(this.statusStrip1);
 			this.Name = "Form1";
-			this.Text = "Stalker";
+			this.Text = "Stalker Quest Tracker";
 			this.Load += new System.EventHandler(this.Form1_Load);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
 			this.flowLayoutPanel1.ResumeLayout(false);

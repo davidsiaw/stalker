@@ -46,9 +46,12 @@ namespace Stalker {
 		}
 
 		[InitialWidth(50)]
-		public int ID {
+		public string ID {
 			get {
-				return m_c.ID;
+				if (m_c.kilnReview != null) {
+					return m_c.ID.ToString() + " -> " + m_c.kilnReview.ID.ToString();
+				}
+				return m_c.ID.ToString();
 			}
 		}
 
@@ -65,7 +68,7 @@ namespace Stalker {
 		}
 
 		[AutoFillColumn]
-		[MinimumWidth(200)]
+		[MinimumWidth(300)]
 		public string Name {
 			get {
 				return m_c.Name;
@@ -84,7 +87,7 @@ namespace Stalker {
 				if (m_c.kilnReview != null) {
 					return m_c.kilnReview.Status.ToString();
 				}
-				return m_c.ParentMileStone.Name;
+				return string.Join(" ", m_c.ParentMileStone.GetDateIfRelevant(), m_c.ParentMileStone.Name).Trim();
 			}
 		}
 
@@ -123,7 +126,8 @@ namespace Stalker {
 					var res = ed.ShowDialog();
 					if (res == DialogResult.OK) {
 						m_ci.SendMessage(() => {
-							m_fb.SetEstimate(ID, ed.UserEstimate);
+
+							m_fb.SetEstimate(m_c.ID, ed.UserEstimate);
 						});
 					}
 				}
@@ -154,7 +158,7 @@ namespace Stalker {
 				var res = ed.ShowDialog();
 				if (res == DialogResult.OK) {
 					m_ci.SendMessage(() => {
-						m_fb.SetStatus(ID, ed.SelectedStatus.ID);
+						m_fb.SetStatus(m_c.ID, ed.SelectedStatus.ID);
 					});
 				}
 			}
@@ -164,8 +168,10 @@ namespace Stalker {
 		[InitialWidth(50)]
 		public string Details(bool clicked) {
 			if (clicked) {
-				CaseDetails cd = new CaseDetails(m_c, m_fb, m_ci);
-				cd.Show();
+				if (m_c.caseEvents != null) {
+					CaseDetails cd = new CaseDetails(m_c, m_fb, m_ci);
+					cd.Show();
+				}
 			}
 
 			return "Details";
@@ -177,9 +183,9 @@ namespace Stalker {
 
 				m_ci.SendMessage(() => {
 					if (m_c.kilnReview != null) {
-						Process.Start(m_fb.ReviewURL(ID));
+						Process.Start(m_fb.ReviewURL(m_c.kilnReview.ID));
 					} else {
-						Process.Start(m_fb.CaseEditURL(ID));
+						Process.Start(m_fb.CaseEditURL(m_c.ID));
 					}
 				});
 			}

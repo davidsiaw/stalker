@@ -495,7 +495,7 @@ namespace KilnApi {
         /// Returns the review case with specified ID and related changesets.
         /// </summary>
         /// <param name="id">A unique review identifier.</param>
-        public Review GetReview(int id) {
+        public Review GetReview(string id) {
             return Call<Review>(KilnApiCall.Review, new { ixReview = id, token = Token });
         }
 
